@@ -20,7 +20,7 @@ app.use(require('./routes/'));
 
 
 
-const PORT = process.env.PORT || 8021;
+const PORT =  4000;
 
 
 
