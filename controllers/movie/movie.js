@@ -79,7 +79,7 @@ exports.getNowPlaying= async (req, res)=>{
     const movieData= await MovieRepo.getAll()
 
     if (movieData !== null) {
-      return Response.validationError(res, 400,  "we have no Movies  for now!");
+      return Response.validationError(res, "we have no Movies  for now!");
     }
 
      return Response.Success(res, 200, "getting movies process done successfully", {
@@ -100,7 +100,7 @@ exports.getOne= async (req, res)=>{
 
     const movieData= await MovieRepo.getOne(_id)
     if (movieData !== null) {
-      return Response.validationError(res, 400,  "This Movie  is not exists!");
+      return Response.validationError(res,  "This Movie  is not exists!");
     }
 
     const payload= {
@@ -140,7 +140,7 @@ exports.PlayMovie= async (req, res)=>{
     const movieData= await MovieRepo.getOne(_id, views)
 
     if (movieData !== null) {
-      return Response.validationError(res, 400,  "process failed!");
+      return Response.validationError(res,  "process failed!");
     }
 
     return Response.validationError(res, 200,  "views updated successfully!");
@@ -154,11 +154,11 @@ exports.PlayMovie= async (req, res)=>{
 
 exports.getPopular= async (req, res)=>{
   try {
-
+    console.log('hello')
     const movieData= await MovieRepo.getPopular()
 
     if (movieData !== null) {
-      return Response.validationError(res, 400,   "we have no Movies  for now!");
+      return Response.validationError(res, "we have no Movies  for now!");
     }
 
 
@@ -179,7 +179,7 @@ exports.rateMovie= async (req, res)=>{
     const movieData= await MovieRepo.rateMovie(_id, rate)
 
     if (movieData !== null) {
-      return Response.validationError(res, 400,  "process failed!");
+      return Response.validationError(res,  "process failed!");
     }
 
     return Response.validationError(res, 200,  "rate updated successfully!");
@@ -197,7 +197,7 @@ exports.getTopRated= async (req, res)=>{
     const movieData= await MovieRepo.topRated()
 
     if (movieData !== null) {
-      return Response.validationError(res, 400,   "we have no Movies  for now!");
+      return Response.validationError(res,   "we have no Movies  for now!");
     }
 
 

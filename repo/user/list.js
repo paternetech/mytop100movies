@@ -39,7 +39,7 @@ exports.removingFromList= async (req, res)=>{
 }
 
 
-exports.getTvShow= async (req, res)=>{
+exports.getAll= async (req, res)=>{
   try {
     
   } catch (err) {

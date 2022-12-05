@@ -16,7 +16,7 @@ app.use(cors({origin: "*"}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', require('./routes/'));
+app.use(require('./routes/'));
 
 
 

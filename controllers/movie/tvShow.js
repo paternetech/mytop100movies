@@ -32,7 +32,7 @@ exports.create= async (req, next)=>{
     const payload= {
       _id: tvshowData._id,
       title: tvshowData.title,
-      overview: movieDataoverview,
+      overview: movieData.overview,
       IMDB_Id: tvshowData.IMDB_Id,
       season: tvshowData.season,
       rate: tvshowData.rate,
@@ -55,7 +55,7 @@ exports.getAll= async (req, next)=>{
     const tvshowData= await TvshowRepo.getAll()
 
     if (tvshowData !== null) {
-      return Response.validationError(res, 400,  "we have no tv shows  for now!");
+      return Response.validationError(res,  "we have no tv shows  for now!");
     }
 
      return Response.Success(res, 200, "getting tv show process done successfully", {
@@ -74,7 +74,7 @@ exports.getPopular= async (req, next)=>{
     const tvShowData= await TvshowRepo.getPopular()
 
     if (tvShowData !== null) {
-      return Response.validationError(res, 400,   "we have no tv shows  for now!");
+      return Response.validationError(res,   "we have no tv shows  for now!");
     }
 
     return Response.Success(res, 200, "getting tv show process done successfully", {
@@ -96,7 +96,7 @@ exports.rateTvShow= async (req, res)=>{
     const tvShowData= await TvshowRepo.rateTvShow(_id, rate)
 
     if (tvShowData !== null) {
-      return Response.validationError(res, 400,  "process failed!");
+      return Response.validationError(res,  "process failed!");
     }
 
     return Response.validationError(res, 200,  "rate updated successfully!");
@@ -113,7 +113,7 @@ exports.getTopRated= async (req, res)=>{
     const tvshowData= await topRatedTvshow.topRated()
 
     if (tvshowData !== null) {
-      return Response.validationError(res, 400,   "we have no tv show  for now!");
+      return Response.validationError(res,   "we have no tv show  for now!");
     }
 
 
